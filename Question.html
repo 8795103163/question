@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .ab{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            border: 2px solid red;
+            align-items: center;
+            justify-content: center;
+            background-color: antiquewhite;
+        }
+        .main{
+            height: 50%;
+            width: 50%;
+            display: flex;
+            border: 1px solid red;
+            background-color: aqua;
+            border-radius: 30px;
+            justify-content: center;
+            position: relative;
+
+            
+        }
+        
+        .main h1{
+            /* display: inline-block; */
+            display: block;
+            margin-top: 2%;
+            padding-top: 0px;
+            width:50% ;
+            padding: 5px;
+            height: 15%;
+            text-align: center;
+            color: white;
+            border-bottom: 2px solid royalblue;
+            background-color: blueviolet;
+            border-radius: 30px;
+            display: block;
+            
+        }
+        .qn{
+           border-radius: 25px;
+            height: 60%;
+            width: 100%;
+            /* top: 30%; */
+            top: 20%;
+            /* bottom: 0; */
+            /* border: 1px solid red; */
+            position: absolute;
+            display: block;
+            border-radius: 0px 0px 30px 30px;
+            /* z-index: 0; */
+            /* background-color: blue; */
+        }
+        .main .qn ol{
+            list-style-position: inside;
+        }
+        
+        .que{
+            position: absolute;
+            background-color: aliceblue;
+            height: 7vh;
+            top: 0px;
+            width: 98%;
+            /* margin-top: 5px; */
+            z-index: 2;
+            margin: 5px;
+            font-size: 2rem;
+            border-radius: 25px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ans{
+            position: absolute;
+            top:10vh;
+            font-size: 2rem;
+            padding-left: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .footer{
+            position: absolute;
+            bottom: 0;
+            height: 10%;
+            width: 100%;
+            background-color: bisque;
+            border-radius: 0 0 30px 30px;
+            display: flex;
+            justify-content: space-around;
+            /* gap: ; */
+        }
+        @media(max-width:1100px){
+            .que{
+                font-size: 1.5rem;
+            }
+            .ans{
+                font-size: 1.5rem;
+            }
+        }
+        @media (max-width:900px){
+            .main{
+                height: 70vh;
+                width: 80vw;
+                transition: 2s;
+            }
+            .main h1{
+            width: 25vh;
+            height: 10%;
+            display: block;
+            font-size: 1.5rem;
+            }
+            .que{
+                
+                font-size: 1.5rem;
+                height: 8vh;
+            }
+            .ans{
+                font-size: 1.5rem;
+            }
+        }
+        @media (max-width:500px){
+            .main{
+                height: 70vh;
+                width: 80vw;
+                transition: 2s;
+
+            }
+            .main h1{
+            height: 10%;
+            display: block;
+            }
+            .que{   
+                font-size: 1.5rem;
+            }
+            .ans{
+                font-size: 1.5rem;
+            }
+        }
+
+    </style>
+</head>
+<body><div class="ab">
+    <div class="main">
+        <h1>Assessment</h1> 
+        <div class="qn">
+            <div class="que">
+                <ol>
+                    <li><label>Question</label></li>
+                </ol>
+            </div>
+            <div class="ans">
+            <ol type="A" start="1">
+                <li><input type="radio" id="a1" name="ans"> <label for="a1">Answer 1</label> </li>
+                <li><input type="radio" id="a2" name="ans"> <label for="a2">Answer 2</label> </li>
+                <li><input type="radio" id="a3" name="ans"> <label for="a3">Answer 3</label> </li>
+                <li><input type="radio" id="a4" name="ans"> <label for="a4">Answer 4</label> </li>
+            </ol>
+        </div>
+        </div>
+        <div class="footer">
+            <button id="back">Back</button>
+            <button id="submit">Final Submit</button>
+            <button id="next">Next</button>
+        </div>
+    </div>
+    
+  
+</div>
+
+
+<script>
+    var lists=document.querySelectorAll("label");
+
+questions=[
+["Which of these is not absent in HTML? ","Tags","Source file","Tracking systems","Fat links"],
+["Which of these does not support the earlier release of HTML? ","Opera","Chrome","Safari","Edge"],
+["Which of these refers to HTML 4.0?","Wilbur","Frameset","Strict","HTML Rattle"]
+]
+for(i=0;i<questions.length;i++){
+    for(j=0;j<5;j++){
+        lists[j].innerText=questions[i][j]
+    }
+}
+    
+</script>
+</body>
+</html>
